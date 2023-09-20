@@ -1,0 +1,246 @@
+# !!!-----   Text based Advanture Game   -----!!!
+
+import time
+
+def introduction():
+   directions = ['East','West','North','South']
+   userInput = ""
+   while userInput not in directions:
+      print('Where would you like to go?')
+      print("Options: East/West/North/South")
+      userInput = input()
+      if userInput == "East" or userInput == "east":
+         east()
+      elif userInput == "West" or userInput == "west":
+         west()
+      elif userInput == "North" or userInput == "north":
+         north()
+      elif userInput == "South" or userInput == "south":
+         south()
+      else:
+         print('Enter valid option !!!')
+         introduction()
+
+
+# -----------------------------------------------------------------------------------------------------------------
+def east():
+   print('When you entered in East side you see that The tunnels stretched out like a web spun by some ancient, subterranean spider')
+   option = ['1','2']
+   user = ''
+   while user not in option:
+      print('You see old man and then The old man offers you ')
+      print('1 = you will transfor from hear to North side \n2 = You will transfor from hear to South side \n3 = You will go near Demons Commander')
+      u = input('what will you choice 1, 2, 3 : ')
+      if u == '1':
+         print('Suddenly light appears you close your eyes and you entered in North side ')
+         north()
+
+      elif u == '2':
+         print('The old man says to you, You are shure to go in south side, \nI will give you one more chance if you enter 1 then you will entered in south side if you entered 2 then you will go near your Enemy... ')
+         u = input('what will your choice 1 or 2 : ')
+         if u == '1':
+            print('Suddenly light appears, you close your eyes and you entered in South side')
+            south()
+         elif u == '2':
+            print('You entered in starting point...')
+            introduction()
+         else:
+            print('please select valide option !!! ')
+
+      elif u == '3':
+         print('You entered in the winding passages. \nThe air was thick with the scent of damp earth, and the only sound was the echoing drip of water. \nand in your hand there was one key and you see three door ')
+         time.sleep(2)
+         print('and In each door you see symbols \n1 = Warrior \n2 = Home \n3 = Mysterious ')
+         u = input('Which door you want to open 1, 2, 3 : ')
+         if u == '1':
+            print('When you walk into that room, a lot of monster warriors attack you and then you die. ')
+            quit()
+         elif u == '2':
+            print('You entered in starting point...')
+            introduction()
+         elif u == '3':
+            print('This is new passage you entered... ')
+            B()
+      else:
+         print('please enter valide option !!!')
+
+
+# -----------------------------------------------------------------------------------------------------------------
+def west():
+   option = ['a','b']
+   user = ''
+   while user not in option :
+      print('In the west Side You saw, the path was drenched in the golden hues of dawn. \nSuddenly you realize that both the walls of the maze are getting closer  ')
+      time.sleep(1)
+      print('You have two option \n1 = Go back  \n2 = Go ahead')
+      user = input('Which one you Choice 1, 2 : ')
+      if user == '1' :
+         print('After you get off safe, you entered near dragen and he has three heads and each head say to come here')
+         time.sleep(1)
+         print('first head is looking dagger, the second is looking hungry, and the third is looking happy')
+         u = input('Which one of the following do you want to go 1, 2, 3 : ')
+         if u == '1':
+            print('he is looking denger but when you entered in his mouth \nThen you get dizzy and when you wake up you find yourself on the East Side')
+            east()
+         elif u == '2':
+            print('He was hungry, acid had accumulated in his stomach, and when you entered, you disappeared... ')
+            quit()
+         elif u == '3':
+            print('When you entered in his mouth, he say you if you solved this quection then you will go ahead...')
+            time.sleep(2)
+            print('If A is substituted by 4, B by 3, C by 2, D by 4, E by 3, F by 2 and so on, \nthen what will be total of the numerical values of the letters of the word SICK?')
+            print('a: 11.00     b: 11 \nc: 12.00     d: 12')
+            user = input('which one is correct : ')
+            if user == 'b':
+               B()
+            elif user == 'a' or user == 'c' or user == 'd' :
+               quit()
+            else:
+               print('Enter correct option...')
+      elif user == '2':
+         print('You entered in starting point...')
+         introduction()
+      else:
+         print('Please enter valide option !!!')
+
+
+# -----------------------------------------------------------------------------------------------------------------
+def north():
+   option = ['a','b']
+   print('There were many cages on the north side, where many demons lived. \nAnd after a few steps, you see that there are two tunnels, A and B. ')
+   user = ''
+   while user not in option :
+      print('Where you want to go !!!')
+      user = input('A or B : ').lower()
+      if user == 'a'  :
+         print('You are inside A tunnels and there is a demon soldier sleeping. Now what do you want to do? Fight or go silently.')
+         user = input('1 for fight \n2 for go Silently')
+         if user == '1':
+            print('you will lose your life after the fight')
+            quit()
+         elif user == '2':
+            print('you entered in magical door and going to new phase !!!')
+            phase()
+      
+      elif user == 'b':
+         print('You are inside B and then you entered in new phase !!!')
+         phase()
+      else:
+         print('enter correct option')
+
+def phase():
+   print('The Ethereal Phase, where time itself seemed to warp and shift. \nAnd there was some pure soul who told you that you have three choices, and all three are correct. \nHowever, it depends on your luck where you want to go')
+   option = ['a','b']
+   user = ''
+   while user not in option:
+      u = input('where you want to go  1, 2, 3 : ')
+      if u == '1' :
+         print('you got a new sword and you are doing near east side ')
+         east()
+      if u == '2':
+         print('congraluation you find short cut to go in starting point ')
+         introduction()
+      if u == '3':
+         print('you are going in other direction ')
+         west()
+
+
+# -----------------------------------------------------------------------------------------------------------------
+def south():
+   option = ['A', 'B']
+   print('You are going south side and After you walk some steps you see that there are lots of skeletons, and after a few steps you see that there are two tunnels, \nA little light was coming from Left tunnel and the Wright tunnel was full of darkness.')
+   userinput = ''
+   while userinput not in option:
+      print('Where would you like to go !!!')
+      userinput = input('Left or Wright : ').lower()
+      if userinput == 'left' :
+         A()
+      elif userinput == 'wright' or userinput == 'WRIGHT' :
+         B()
+
+def A():
+   option = [1,2,3]
+   print('Now you are in Left tunnel...')
+   userinput = ''
+   while userinput not in option :
+      print('You see that there are many gold bars inside the wall and on the other side many diamond bars inside the wall.')
+      time.sleep(1)
+      print('after you walk some step you see there are three switch \nfirst switch is for get a new sword \nsecond for get a new road ')
+      userinput = input('which one you choice 1, 2 : ')
+      if userinput == '1' :
+         print('this is option a 1')
+         print('your front is kalkeya and he want to fight with you then what you want, if you want to fight then press y if dont then n')
+         userint = input('y or n : ')
+         if userint == 'y' or userint == 'Y' :
+           print('you will lose your life after the fight ...')
+           quit()
+         elif userint == 'n' or userint == 'N' :
+           print('you get a sword, but you will lose your life after fight, \nbut because of sword. you get one more chance ')
+           print('you found yourself in left tunnel...')
+           A()
+
+      elif userinput == '2' :
+        print('you get a new road to go your Destination')
+        phase()
+
+      else:
+         print('enter correct option!!!')
+
+def B():
+   option = ['a','b']
+   print('You realized that you were close to a princess, and now you have to battle with a demon. !!!')
+   userint = ''
+   while userint not in option:
+      print('you see princess soul and you follow him after that you realized you are in dew point, \n and there are three ways, princess soul says you if you choice is correct then you will fight with kalkeya, the king demons Empire !!!')
+      user = input('which one you choice 1,2,3 : ')
+
+      if user == '1':
+         print('there was a wall')
+         print(input('enter to go back...'))
+         B()
+      
+      elif user == '2':
+         print('you got a magical sword and then you enter new block to fight with kalkeya ')
+         fight = input('enter you fight with kalkeya !!! ')
+         print(fight)
+         C()
+
+      elif user == '3':
+         print('there was a wall')
+         print(input('enter to go back...'))
+         B()
+
+      else:
+         print('please select correct option !!!')
+
+def C():
+   option = ['a','b']
+   print('you win that fight and now what you want to do with kalkeya  ')  
+   u = ''
+   while u not in option :
+      u = input('deth or live : ').lower()
+      if u == 'deth' :
+         print('after kalkeya deth mazes was crack and you enter near priences and then you and princes happly merrage with hero and you are live in good ...')
+         quit()
+      elif u == 'live':
+         print('you enter in back door and then save princess and you are the first one with pure hart thats why demon was appoloies and he choice to be your servant')
+         quit()
+  
+# -----------------------------------------------------------------------------------------------------------------
+if __name__ == "__main__":
+   while True:
+      name = input('Enter Your Name : ')
+      prname = input('Enter Your Princess Name : ')
+      print("Hello "+ name + ", Welcome to the X Adventure Game!")
+      time.sleep(1)
+      start = input('Please Enter to start Game !!!')
+      print(start)
+      print(
+         '''A long year ago, there was a great 'Magadh' Samrajya ruled by a brave Maharaja named 'Bahubali'  He has a beautiful daughter, her name was  ''' + prname + '''.  \nOne day he called his Mantri and ordered him to announce the swayamwar of  princess ''' + prname + '''. \nThe news spread like a wild fire and many Princes of the neighborhodding countries show interest in his Swayamwar,  so The Maharaja arranges swayamwar on her birthday.
+         ''')
+      time.sleep(3)
+      print('''A day before the Swayamwar ceremony, a Demon called kalkeya, he is a king of darkness, attract on the Rajmahal, fainted The Maharaja and kidnap his daughter,  \nThe Demon possessed magical cave with many mazes, The Demon trapped princess in that cave.''')
+      time.sleep(3)
+      print('''In the Swayamwar ceremony, many princes went, then The Maharaja promised that, the one who rescue the princess from the demon will marry the princess. You entered that mysterious cave to save. \nNow you are in that mysterious cave. In that cave, you can choose to go down any of the four directions.''')
+      time.sleep(3)
+      introduction()
